@@ -9,13 +9,13 @@ jobs:
       matrix:
         arduino-platform:
         # Alphabetical order
-        - 'cluenrf52840'
-        - 'cplaynrf52840'
+        - 'bluemicro_nrf52840'
         - 'feather52832'
         - 'feather52840'
-        - 'feather52840sense'
-        - 'itsybitsy52840'
-        - 'ledglasses_nrf52840'
+        - 'ebyte_e73_tbb'
+        - 'ebyte_e104_bt5032a'
+        - 'nice_nano'
+        - 'pca10059'
 
     runs-on: ubuntu-latest
     
