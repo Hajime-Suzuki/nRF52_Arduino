@@ -1,4 +1,4 @@
-# Arduino Core for Adafruit Bluefruit nRF52 Boards
+# Add-on Arduino Core for nRF52 Boards
 
 [![Build Status](https://github.com/adafruit/Adafruit_nRF52_Arduino/workflows/Build/badge.svg)](https://github.com/adafruit/Adafruit_nRF52_Arduino/actions)
 
@@ -18,6 +18,13 @@ Following boards are also included but are not officially supported:
 
 - [Nordic nRF52840DK PCA10056](https://www.nordicsemi.com/Software-and-Tools/Development-Kits/nRF52840-DK)
 - [Particle Xenon](https://store.particle.io/products/xenon)
+
+The Following boards are included as part of the add-on:
+
+- Bluemicro840
+- Nordic nRF52840 dongle PCA10059
+- Nice!Nano
+
 
 ## BSP Installation
 
