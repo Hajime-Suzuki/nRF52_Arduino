@@ -1,4 +1,4 @@
-name: Build
+name: Build nRF52832 Examples
 
 on: [pull_request, push]
 
@@ -12,12 +12,6 @@ jobs:
         - 'feather52832'
         - 'ebyte_e73_tbb'
         - 'ebyte_e104_bt5032a'
-        nrf52840-platform:
-        # Alphabetical order
-        - 'bluemicro_nrf52840'
-        - 'feather52840'
-        - 'nice_nano'
-        - 'pca10059'
 
     runs-on: ubuntu-latest
     
@@ -74,5 +68,3 @@ jobs:
 
     - name: Build 832 examples
       run: python3 tools/build_all_832.py ${{ nrf52832-platform }}
-    - name: Build 840 examples
-      run: python3 tools/build_all_840.py ${{ nrf52840-platform }}
