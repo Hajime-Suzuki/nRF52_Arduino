@@ -7,13 +7,15 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        arduino-platform:
+        nrf52832-platform:
         # Alphabetical order
-        - 'bluemicro_nrf52840'
         - 'feather52832'
-        - 'feather52840'
         - 'ebyte_e73_tbb'
         - 'ebyte_e104_bt5032a'
+        nrf52840-platform:
+        # Alphabetical order
+        - 'bluemicro_nrf52840'
+        - 'feather52840'
         - 'nice_nano'
         - 'pca10059'
 
@@ -70,5 +72,7 @@ jobs:
         # Library summary
         arduino-cli lib list
 
-    - name: Build examples
-      run: python3 tools/build_all.py ${{ matrix.arduino-platform }}
+    - name: Build 832 examples
+      run: python3 tools/build_all_832.py ${{ nrf52832-platform }}
+    - name: Build 840 examples
+      run: python3 tools/build_all_840.py ${{ nrf52840-platform }}
