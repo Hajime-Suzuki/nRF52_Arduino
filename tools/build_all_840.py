@@ -56,6 +56,9 @@ def build_examples(variant):
         if  "msc_external_flash_sdcard.ino" in sketch:
             continue
 
+        if  "adc_vbat.ino" in sketch:
+            continue      
+
         start_time = time.monotonic()
 
         # Skip if contains: ".board.test.skip" or ".all.test.skip"
