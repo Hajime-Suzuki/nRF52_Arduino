@@ -1,4 +1,4 @@
-name: Build nRF52832 Examples
+name: Build nRF52832/840 Examples
 
 on: [pull_request, push]
 
@@ -7,6 +7,12 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
+        nrf52840-platform:
+        # Alphabetical order
+        - 'bluemicro_nrf52840'
+        - 'feather52840'
+        - 'nice_nano'
+        - 'pca10059'
         nrf52832-platform:
         # Alphabetical order
         - 'feather52832'
@@ -66,5 +72,8 @@ jobs:
         # Library summary
         arduino-cli lib list
 
+    - name: Build 840 examples
+      run: python3 tools/build_all_840.py ${{ matrix.nrf52840-platform }}
+
     - name: Build 832 examples
-      run: python3 tools/build_all_832.py ${{ nrf52832-platform }}
+      run: python3 tools/build_all_840.py ${{ matrix.nrf52832-platform }}
