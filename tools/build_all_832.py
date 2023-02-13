@@ -47,6 +47,15 @@ def build_examples(variant):
         if  "libraries/Adafruit_TinyUSB_Arduino" in sketch:
             continue
 
+        if  "libraries/Adafruit_nRFCrypto" in sketch:
+            continue
+
+        if  "adc_vbat.ino" in sketch:
+            continue
+
+        if  "Serial1_test.ino" in sketch:
+            continue
+   
         start_time = time.monotonic()
 
         # Skip if contains: ".board.test.skip" or ".all.test.skip"

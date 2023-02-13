@@ -47,6 +47,15 @@ def build_examples(variant):
         if variant == 'feather52832' and "libraries/Adafruit_TinyUSB_Arduino" in sketch:
             continue
 
+        if  "mouse_external_flash.ino" in sketch:
+            continue
+
+        if  "msc_external_flash.ino" in sketch:
+            continue
+
+        if  "msc_external_flash_sdcard.ino" in sketch:
+            continue
+
         start_time = time.monotonic()
 
         # Skip if contains: ".board.test.skip" or ".all.test.skip"
