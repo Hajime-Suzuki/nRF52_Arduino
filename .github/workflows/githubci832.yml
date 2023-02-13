@@ -1,4 +1,4 @@
-name: Build
+name: Build nRF5282 Examples
 
 on: [pull_request, push]
 
@@ -7,15 +7,11 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        arduino-platform:
+        nrf52832-platform:
         # Alphabetical order
-        - 'bluemicro_nrf52840'
         - 'feather52832'
-        - 'feather52840'
         - 'ebyte_e73_tbb'
         - 'ebyte_e104_bt5032a'
-        - 'nice_nano'
-        - 'pca10059'
 
     runs-on: ubuntu-latest
     
@@ -58,7 +54,7 @@ jobs:
 
         # Install library dependency
         arduino-cli lib install "Adafruit AHRS" "Adafruit APDS9960 Library" "Adafruit Arcada Library" "Adafruit BMP280 Library" "Adafruit Circuit Playground" "Adafruit EPD" "Adafruit GFX Library" "Adafruit HX8357 Library" "Adafruit ILI9341" "Adafruit LIS3MDL" "Adafruit LSM6DS" "Adafruit NeoPixel" "Adafruit NeoMatrix" "Adafruit Sensor Calibration" "Adafruit SHT31 Library" "Adafruit SSD1306" "Adafruit ST7735 and ST7789 Library" "SdFat - Adafruit Fork"
-        arduino-cli lib install "Arduino_TensorFlowLite" "MIDI Library"
+        arduino-cli lib install "Adafruit TensorFlow Lite" "MIDI Library"
         
         # TODO use firmata master to prevent build error with gcc v9 (should be remove after 2.5.9 is released)
         # https://github.com/firmata/arduino/pull/438
@@ -70,5 +66,5 @@ jobs:
         # Library summary
         arduino-cli lib list
 
-    - name: Build examples
-      run: python3 tools/build_all.py ${{ matrix.arduino-platform }}
+    - name: Build 832 examples
+      run: python3 tools/build_all_832.py ${{ matrix.nrf52832-platform }}
